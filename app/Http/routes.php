@@ -17,3 +17,4 @@ Route::get('contact', 'ContactController@index');
 Route::post('contact', 'ContactController@submit');
 
 Route::resource('articles', 'ArticlesController');
+Route::get('articles/{id}/delete', 'ArticlesController@delete');
