@@ -8,6 +8,7 @@
   {{ $article->title }}
   <div class="pull-right">
     <a href="/articles/create" class="btn btn-default">New Article</a>
+    <a href="/articles/{{$article->id}}/edit" class="btn btn-default">Edit</a>
     <a href="/articles/{{$article->id}}/delete" class="btn btn-danger">Delete</a> 
   </div>
   <br />

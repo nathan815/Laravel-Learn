@@ -8,35 +8,11 @@
 
   <hr />
 
-  @if($errors->any())
-  <div class="alert alert-danger">
-    <p>The following errors have occurred:</p>
-    <ul>
-      @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-  @endif
+  @include('errors.list')
 
-  {!! Form::open() !!}
+  {!! Form::open(['url' => 'articles']) !!}
     
-    <div class="form-group">
-      {!! Form::label('title', 'Title:') !!}
-      {!! Form::text('title', null, ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-      {!! Form::label('body', 'Body:') !!}
-      {!! Form::textarea('body', null, ['class'=>'form-control']) !!}
-    </div>
-
-    <div class="form-group">
-      {!! Form::label('published_at', 'Publish On:') !!}
-      {!! Form::input('date', 'published_at', date('Y-m-d'), ['class'=>'form-control']) !!}
-    </div>
-
-    <input type="submit" value="Create Post" class="btn btn-primary" />
+    @include('articles.form', ['submitButtonText' => 'Create Article'])
 
   {!! Form::close() !!}
 

@@ -16,10 +16,4 @@ Route::get('about', 'PagesController@about');
 Route::get('contact', 'ContactController@index');
 Route::post('contact', 'ContactController@submit');
 
-Route::get('articles', 'ArticlesController@index');
-Route::get('articles/create', 'ArticlesController@create');
-Route::get('articles/delete', 'ArticlesController@delete');
-Route::get('articles/{id}/delete', 'ArticlesController@delete');
-Route::get('articles/{id}', 'ArticlesController@show');
-
-Route::post('articles/create', 'ArticlesController@store');
+Route::resource('articles', 'ArticlesController');
