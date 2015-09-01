@@ -39,7 +39,8 @@ class ArticlesController extends Controller
       return redirect('articles');
     }
 
-    public function delete($id) {
+    public function delete($id) 
+    {
       $article = $this->article->findOrFail($id);
       return view('articles.delete', ['article' => $article]);
     }
