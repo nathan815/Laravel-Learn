@@ -35,6 +35,7 @@ class ArticlesController extends Controller
     public function store(ArticleRequest $request) 
     {
       $input = $request->all();
+      $input->user_id = 1; // temporary!
       $this->article->create($input);
       return redirect('articles');
     }
